@@ -7,50 +7,55 @@
 
 import Foundation
 
-print("Hello, World!")
+print("qdq")
 
+//2
+let add = readLine()!
+var add2 :[String] = []
 
-
-
-
-let horeus = ["Voin","medick","tank","MAGIC","Boss"]
-var hp = [1000,1000,1000,1500]
-let hit = [200,300,100,0,200]
-var boss = 5000
-var round = 0
-while boss > 0{
-    round += 1
-    boss -= (hit[0] + hit[1] + hit [2] + hit[3])
-    if round % 2 == 0{
-        hp[0] = hp[0] + 200
-        hp [1] = hp [1] + 200
-        hp [2] = hp [2] + 200
-        hp [3] = hp [3] + 200
+var space = ""
+var slov = ""
+for ad in add {
+    if ad == " "{
+        space += String(ad)
+    };if ad != "," && ad != " " && add != "."{
+        slov += String(ad)
     }
-    if boss > 0{
-        hp[0] = hp[0] - 200
-        hp [1] = hp [1] - 200
-        hp [2] = hp [2] - 200
-        hp [3] = hp [3] - 200
-    }
-    
-    
-    if boss <= 0 && hp.reduce(0,+) > 0{
-        print("Выграли Игроки за \(round) Роунд")
-        print("\(horeus[0])Нанес\(round * hit[0])Урона")
-        print("\(horeus[1])Нанес\(round * hit[1])Урона")
-        print("\(horeus[2])Нанес\(round * hit[2])Урона")
-        print("\(horeus[3])Нанес\(round * hit[3])Урона")
-        print("\(horeus[4])Нанес\(round * hit[4])Урона-но Медик вылечил их\(round/2 * 200)")
-        
-    }
-    if boss <= 0 && hp.reduce(0,+) <= 0{
-        print("Игра окончена вы умерли\(round)")
-    }
-              if boss > 0 && hp.reduce(0,+) <= 0{
-            print("Победил Босс!!")
+
+}
+print (slov.count)
+print (space.count)
+
+
+//3
+var slov : [[String]] = [[]]
+func add2 (name:String){
+    let first = name.first!
+    var found = false
+    for (index,item) in slov.enumerated(){
+        for(index2,item2) in item.enumerated(){
+            if index2 == 0 && item2 == String(first) && found == false{
+                slov[index].append(name)
+                found = true
+            }else{
+                continue
+            }
         }
-  
     }
+    if found == false{
+        var arry: [String] = []
+        arry.append(String(first))
+        arry.append(name)
+        slov.append(arry)
+    }
+}
+let rea4 = readLine()!
+add2(name: rea4)
+let rea3 = readLine()!
+add2(name: rea3)
+let rea2 = readLine()!
+add2(name: rea2)
+let rea1 = readLine()!
+add2(name: rea1)
+print(slov)
 
-        
